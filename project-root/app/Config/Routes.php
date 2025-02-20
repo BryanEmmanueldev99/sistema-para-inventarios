@@ -20,3 +20,8 @@ $routes->post('/usuarios/create', 'UsuarioController::store');
 $routes->get('/usuarios/edit/(:num)', 'UsuarioController::edit/$1');
 $routes->post('/usuarios/edit/(:num)', 'UsuarioController::update/$1');
 $routes->post('/usuarios/destroy/(:num)', 'UsuarioController::destroy/$1');
+
+
+/**API REST RUTAS */
+$routes->get('/categorias', 'CategoriaController::index');
+$routes->post('/categorias/store-process', 'CategoriaController::store');

@@ -71,6 +71,7 @@ class Security extends BaseConfig
      *
      * Regenerate CSRF Token on every submission.
      */
+    // PROBLEMAS DE CORS, activar public bool $regenerate = false;
     public bool $regenerate = true;
 
     /**
