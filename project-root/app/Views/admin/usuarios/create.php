@@ -26,28 +26,6 @@
 
         <h2 class="mb-2">Agregar usuario</h2>
 
-            <?php  if(session('success')) :  ?>
-                     <div
-                        class="alert alert-success alert-dismissible fade show"
-                        role="alert"
-                     >
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"
-                            aria-label="Close"
-                        ></button>
-                        <strong>¡Bien!:</strong> <?= session('success') ?>
-                     </div>
-                     
-                     <script>
-                        var alertList = document.querySelectorAll(".alert");
-                        alertList.forEach(function (alert) {
-                            new bootstrap.Alert(alert);
-                        });
-                     </script>
-                     
-            <?php  endif; ?>
 
             <form action="<?= site_url('/usuarios/create') ?>" method="POST">
                 <div class="mb-3">

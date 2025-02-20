@@ -61,5 +61,12 @@ class UsuarioController extends BaseController
     }
 
 
+    public function destroy($id = null) {
+        $usuarioModel = new Usuario();
+        $usuarioModel->where('usuario_id', $id)->delete();
+        return redirect()->to(site_url('/usuarios'))->with('success', 'Usuario borrado con exito.');
+    }
+
+
     /**PENDIENTE METODO DELETE */
 }

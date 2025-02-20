@@ -67,15 +67,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                      <?php  foreach($listarUsuarios as $key): ?>
-                        <tr class="">
-                            <td scope="row"><?= $key['nombre'] ?></td>
-                            <td><?= $key['email'] ?></td>
-                            <td>
-                             <a href="<?= base_url('usuarios/edit/'.$key['usuario_id']) ?>" class="btn btn-primary btn-sm">Editar  </a>
-                            </td>
-                        </tr>
-                      <?php  endforeach; ?>
+                        <?php if(count($listarUsuarios)): ?>
+                            <?php  foreach($listarUsuarios as $key): ?>
+                           <tr class="">
+                             <td scope="row"><?= $key['nombre'] ?></td>
+                             <td><?= $key['email'] ?></td>
+                             <td>
+                              <a href="<?= base_url('usuarios/edit/'.$key['usuario_id']) ?>" class="btn btn-primary btn-sm">Editar  </a>
+                               <form 
+                                action="<?= base_url('usuarios/destroy/'.$key['usuario_id']) ?>" method="POST">
+                                <button type="submit" class="btn btn-primary">Borrar</button>
+                              </form>
+                             </td>
+                           </tr>
+                         <?php  endforeach; ?>
+                        <?php else: ?>
+                            <td scope="row" colspan="4"><p>Sin usuarios existentes.</p></td>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
